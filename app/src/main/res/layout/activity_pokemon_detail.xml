@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Views.PokemonDetailView">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/MainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/pokemonfondo"
+        android:backgroundTint="#80595656"
+        android:backgroundTintMode="src_over"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/pokemon_imagen"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:paddingLeft="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/pokemon_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Pokemon name"
+                    android:textColor="@color/azulpokemon"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/iv_like"
+                        app:lottie_autoPlay="true"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+                    </com.airbnb.lottie.LottieAnimationView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.skydoves.progressview.ProgressView
+                android:id="@+id/exp_bar"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                app:progressView_autoAnimate="true"
+                app:progressView_colorBackground="@color/primario"
+                app:progressView_colorProgress="@color/azulpokemon"
+                app:progressView_labelColorInner="@color/white"
+                app:progressView_labelColorOuter="@color/black"
+                app:progressView_labelSize="13sp"
+                app:progressView_labelSpace="10dp"
+                app:progressView_labelText="Exp"
+                app:progressView_labelTypeface="bold"
+                app:progressView_max="500"
+                app:progressView_min="0"
+                app:progressView_padding="3dp"
+                app:progressView_progressFromPrevious="true"
+                app:progressView_radius="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="Types:"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/types_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/pokedex_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="Pokedex Number:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/wandh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="Weight: 50      Height: 1.5m"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="Moves: "
+                android:textSize="16sp" />
+
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/moves"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:alignContent="center"
+                app:alignItems="center"
+                app:flexWrap="wrap"></com.google.android.flexbox.FlexboxLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
